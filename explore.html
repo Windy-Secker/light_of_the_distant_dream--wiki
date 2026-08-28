@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>探索与成长 - 远梦之光 · 规则 Wiki</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/night.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar"></aside>
+  <main class="content">
+    <article class="page">
+      <h1>探索与成长</h1>
+      <p class="subtitle">《第四章：探索与成长》（v0.1）· 专精详解 · 自然恢复 · 愿力提升 · 空闲时间 · 成长记录</p>
+
+      <p>冒险不仅仅是战斗。在任务之间、在旅途之中、在与世界的每一次交互里，角色都在成长。本章涵盖从日常探索到长期发展的所有规则。</p>
+
+      <h2 id="spec-growth">一、专精技能详解</h2>
+      <h3>1.1 专精技能的行为覆盖</h3>
+      <p>以下是各项专精技能涉及的行为类型、典型检定场景，以及可能获得提升的条件。（专精在<a href="guide.html">角色创建指南</a>中分配，共 12 项。）</p>
+
+      <h4>调查</h4>
+      <table class="wiki-table">
+        <tbody>
+          <tr><td><strong>涉及行为</strong></td><td>搜集线索、拼接信息、发现细节、分析物证、阅读地图、判断痕迹真伪</td></tr>
+          <tr><td><strong>典型检定场景</strong></td><td>① 搜索犯罪现场发现隐藏线索（DC 12~20）<br>② 从零散信息中拼凑出事件全貌（DC 15~25）<br>③ 判断某条线索是否具有调查价值（DC 10~15）</td></tr>
+          <tr><td><strong>可提升条件</strong></td><td>① 成功完成一次复杂线索链的拼合<br>② 发现了被他人忽略的关键证据<br>③ 学习了新的调查方法论（如阅读专业书籍/接受培训）</td></tr>
+        </tbody>
+      </table>
+
+      <h4>神秘学</h4>
+      <table class="wiki-table">
+        <tbody>
+          <tr><td><strong>涉及行为</strong></td><td>辨识符文、了解传说、解读古代文献、识别愿力痕迹、判断符文系谱、理解仪式结构</td></tr>
+          <tr><td><strong>典型检定场景</strong></td><td>① 识别墙上符文图案的系谱与等级（DC 12~25）<br>② 解读古代文本中的晦涩段落（DC 15~25）<br>③ 判断仪式是否完整或已被篡改（DC 15~20）</td></tr>
+          <tr><td><strong>可提升条件</strong></td><td>① 成功辨识了一个未知符文<br>② 通过神秘学知识避免了危险<br>③ 研究了新的古代文献或符文理论</td></tr>
+        </tbody>
+      </table>
+
+      <h4>格斗</h4>
+      <table class="wiki-table">
+        <tbody>
+          <tr><td><strong>涉及行为</strong></td><td>近身战斗、武器使用、徒手格斗、战术移动、招架与反击</td></tr>
+          <tr><td><strong>典型检定场景</strong></td><td>① 近战攻击命中判定（攻击检定）<br>② 擒抱/挣脱对手（DC = 对手体魄调整值 + 10）<br>③ 利用环境进行战术攻击（DC 12~18）</td></tr>
+          <tr><td><strong>可提升条件</strong></td><td>① 在战斗中成功击败一名实力相当的对手<br>② 完成系统的战斗训练（如接受教练指导）<br>③ 掌握新的武器或格斗技巧</td></tr>
+        </tbody>
+      </table>
+
+      <h4>潜行</h4>
+      <table class="wiki-table">
+        <tbody>
+          <tr><td><strong>涉及行为</strong></td><td>隐匿行踪、无声移动、避开侦查、藏匿物品、潜行跟踪</td></tr>
+          <tr><td><strong>典型检定场景</strong></td><td>① 在不被发现的情况下穿过警戒区域（对抗敌方侦查）<br>② 在战斗中寻找掩体并隐蔽移动（DC 12~18）<br>③ 跟踪目标而不被察觉（对抗目标察言观色/感知）</td></tr>
+          <tr><td><strong>可提升条件</strong></td><td>① 成功潜入原本无法进入的区域<br>② 在潜行中完成关键任务目标<br>③ 学习了新的隐匿技巧或接受了专业训练</td></tr>
+        </tbody>
+      </table>
+
+      <h4>追踪</h4>
+      <table class="wiki-table">
+        <tbody>
+          <tr><td><strong>涉及行为</strong></td><td>循迹追猎、判断行进方向、识别足迹与痕迹、推断目标去向、追踪符文痕迹</td></tr>
+          <tr><td><strong>典型检定场景</strong></td><td>① 在荒野中追踪目标留下的足迹（DC 10~20，受天气/地形影响）<br>② 在城市中追踪目标留下的社会痕迹（目击者/消费记录等）（DC 12~18）<br>③ 判断目标走的是哪条路（DC 10~15）</td></tr>
+          <tr><td><strong>可提升条件</strong></td><td>① 成功追踪并找到目标<br>② 在恶劣条件下完成了追踪（暴雨/夜间/复杂地形）<br>③ 研究了当地地形或学习新的追踪技巧</td></tr>
+        </tbody>
+      </table>
+
+      <h4>话术</h4>
+      <table class="wiki-table">
+        <tbody>
+          <tr><td><strong>涉及行为</strong></td><td>说服、套话、安抚、谈判、表演、威胁、误导</td></tr>
+          <tr><td><strong>典型检定场景</strong></td><td>① 说服他人提供信息（DC 10~20，取决于对方态度）<br>② 在谈判中达成有利条件（对抗对方话术或察言观色）<br>③ 安抚情绪激动的人（DC 12~18）</td></tr>
+          <tr><td><strong>可提升条件</strong></td><td>① 通过对话成功获取关键信息<br>② 化解了本可能爆发的冲突<br>③ 与难以相处的人建立了有效沟通</td></tr>
+        </tbody>
+      </table>
+
+      <h4>察言观色</h4>
+      <table class="wiki-table">
+        <tbody>
+          <tr><td><strong>涉及行为</strong></td><td>判断他人情绪、识破谎言、感知敌意、阅读肢体语言、判断意图</td></tr>
+          <tr><td><strong>典型检定场景</strong></td><td>① 判断对方是否在说谎（对抗对方话术）<br>② 察觉人群中的敌意或危险（DC 10~18）<br>③ 感知被隐藏的真实意图（DC 12~20）</td></tr>
+          <tr><td><strong>可提升条件</strong></td><td>① 成功识破了一个谎言或伪装<br>② 提前感知到了即将发生的危险<br>③ 接触了不同类型的人并积累了经验</td></tr>
+        </tbody>
+      </table>
+
+      <h4>野外生存</h4>
+      <table class="wiki-table">
+        <tbody>
+          <tr><td><strong>涉及行为</strong></td><td>辨识方向、搭建庇护所、寻找水源、采集食物、预测天气、应对极端环境</td></tr>
+          <tr><td><strong>典型检定场景</strong></td><td>① 在荒野中寻找正确的方向（DC 10~20，取决于地形）<br>② 搭建可用的临时庇护所（DC 10~15）<br>③ 在极端环境中存活（DC 15~25）</td></tr>
+          <tr><td><strong>可提升条件</strong></td><td>① 在野外成功存活了较长时间<br>② 在恶劣环境中完成了任务<br>③ 学习了新的生存技巧或熟悉了特定地形</td></tr>
+        </tbody>
+      </table>
+
+      <h4>急救</h4>
+      <table class="wiki-table">
+        <tbody>
+          <tr><td><strong>涉及行为</strong></td><td>止血、包扎、处理中毒/昏迷、稳定伤势、基础医疗判断</td></tr>
+          <tr><td><strong>典型检定场景</strong></td><td>① 稳定濒死队友的伤势（DC 15）<br>② 处理中毒或疾病症状（DC 12~18）<br>③ 在缺乏医疗资源的情况下进行急救（DC 10~20）</td></tr>
+          <tr><td><strong>可提升条件</strong></td><td>① 成功将一名角色从濒死状态救回<br>② 在资源匮乏的情况下完成了有效急救<br>③ 接受了系统的医疗训练</td></tr>
+        </tbody>
+      </table>
+
+      <h4>机械修理</h4>
+      <table class="wiki-table">
+        <tbody>
+          <tr><td><strong>涉及行为</strong></td><td>修理器材、破坏机械、判断陷阱、操作设备、改造装备</td></tr>
+          <tr><td><strong>典型检定场景</strong></td><td>① 修理一件损坏的装备或载具（DC 10~20）<br>② 识别或解除一个机械陷阱（DC 12~18）<br>③ 改造或临时组装设备（DC 15~22）</td></tr>
+          <tr><td><strong>可提升条件</strong></td><td>① 成功修复了一台被认为无法修复的设备<br>② 在紧急情况下临时制作了有用的工具<br>③ 研究了新的机械原理或设备类型</td></tr>
+        </tbody>
+      </table>
+
+      <h4>外语</h4>
+      <table class="wiki-table">
+        <tbody>
+          <tr><td><strong>涉及行为</strong></td><td>阅读与书写其它语言、破译咒文、辨识异界文字、与使用其它语言的生物交流、理解失传文献</td></tr>
+          <tr><td><strong>典型检定场景</strong></td><td>① 破译一段其它语言写成的咒文或文献（DC 15~25）<br>② 与使用其它语言的生物进行沟通（DC 12~20）<br>③ 判断一段外语文本的真伪或年代（DC 10~20）</td></tr>
+          <tr><td><strong>可提升条件</strong></td><td>① 成功破译或书写了一段关键文本<br>② 通过外语知识避免了误解或危险<br>③ 学习了新的语言材料或接受了语言训练</td></tr>
+        </tbody>
+      </table>
+
+      <h4>灵感</h4>
+      <table class="wiki-table">
+        <tbody>
+          <tr><td><strong>涉及行为</strong></td><td>灵光一现、直觉感知、捕捉梦境预兆、预感危险、连接潜意识信息</td></tr>
+          <tr><td><strong>典型检定场景</strong></td><td>① 在信息不足时凭直觉判断方向或真伪（DC 12~20）<br>② 解读梦境或预兆的象征含义（DC 15~25）<br>③ 察觉即将到来的危险或机遇（DC 10~18）</td></tr>
+          <tr><td><strong>可提升条件</strong></td><td>① 在关键时刻凭直觉做出了正确的判断<br>② 成功解读了一次梦境或预兆<br>③ 进行了冥想、灵感训练或积累了更多灵性经验</td></tr>
+        </tbody>
+      </table>
+
+      <h3>1.2 专精提升的额外方式</h3>
+      <p>除上述条件外，专精技能还可通过以下方式获得提升：</p>
+      <table class="wiki-table">
+        <thead><tr><th>方式</th><th>说明</th><th>获得进度</th></tr></thead>
+        <tbody>
+          <tr><td><strong>导师指导</strong></td><td>接受更高等级专精者的系统性指导</td><td>每2天+1点（上限+3）</td></tr>
+          <tr><td><strong>实践积累</strong></td><td>在冒险中频繁使用某项专精技能（讲述者酌情决定）</td><td>每完成一次相关挑战+2点</td></tr>
+          <tr><td><strong>理论学习</strong></td><td>阅读专业书籍或进行系统训练（需在有条件时进行）</td><td>每5天+1点（上限+2）</td></tr>
+          <tr><td><strong>经历突破</strong></td><td>在关键时刻因成功完成高难度挑战而顿悟</td><td>一次性+2点</td></tr>
+        </tbody>
+      </table>
+      <blockquote>专精等级提升进度采用与<a href="#idle">空闲时间</a>相同的进度积累机制，而不是直接提升对应等级。</blockquote>
+
+      <h2 id="recovery">二、脱战状态下的自然恢复</h2>
+      <h3>2.1 生命值恢复</h3>
+      <table class="wiki-table">
+        <thead><tr><th>休息时长</th><th>恢复量</th><th>条件</th></tr></thead>
+        <tbody>
+          <tr><td><strong>短休息（1小时）</strong></td><td>体魄调整值（最低1）</td><td>在安全区域，不进行剧烈活动</td></tr>
+          <tr><td><strong>长休息（8小时）</strong></td><td>体魄 × 2 + 10</td><td>完全休息、睡眠</td></tr>
+          <tr><td><strong>全天休整（24小时）</strong></td><td>体魄 × 4 + 20</td><td>位于安全据点，完全不执行任务</td></tr>
+        </tbody>
+      </table>
+      <blockquote><strong>快速恢复</strong>：可选择在长休息期间不恢复而是额外消耗体力池，每消耗<strong>10点</strong>使生命值恢复量 <strong>+5</strong>。</blockquote>
+
+      <h3>2.2 体力池恢复</h3>
+      <table class="wiki-table">
+        <thead><tr><th>休息时长</th><th>恢复量</th><th>条件</th></tr></thead>
+        <tbody>
+          <tr><td><strong>短休息（1小时）</strong></td><td>体魄调整值 + 2（最低2）</td><td>在安全区域，不进行剧烈活动</td></tr>
+          <tr><td><strong>长休息（8小时）</strong></td><td>体力池上限的 <strong>1/4</strong>（向下取整）</td><td>完全休息、睡眠</td></tr>
+          <tr><td><strong>全天休整（24小时）</strong></td><td>体力池上限的 <strong>3/4</strong>（向下取整）</td><td>位于安全据点，完全不执行任务</td></tr>
+        </tbody>
+      </table>
+
+      <h3>2.3 愿力恢复</h3>
+      <table class="wiki-table">
+        <thead><tr><th>休息时长</th><th>恢复量</th><th>条件</th></tr></thead>
+        <tbody>
+          <tr><td><strong>短休息（1小时）</strong></td><td>愿力调整值 × 5 + 10（最低10）</td><td>进行冥想、轻度放松或休整</td></tr>
+          <tr><td><strong>长休息（8小时）</strong></td><td>愿力上限的 <strong>2/3</strong>（向上取整）</td><td>完整睡眠 + 休息</td></tr>
+          <tr><td><strong>全天休整（24小时）</strong></td><td>完全恢复</td><td>位于安全据点，完全不执行任务</td></tr>
+        </tbody>
+      </table>
+
+      <h3>2.4 恢复效率总结</h3>
+      <table class="wiki-table">
+        <thead><tr><th>资源</th><th>短休息（1h）</th><th>长休息（8h）</th><th>全天休整（24h）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>生命值</strong></td><td>体魄调整值（最低1）</td><td>体魄×2 + 10</td><td>体魄×4 + 20</td></tr>
+          <tr><td><strong>体力池</strong></td><td>体魄调整值 + 2</td><td>上限的1/4</td><td>上限的3/4</td></tr>
+          <tr><td><strong>愿力</strong></td><td>愿力调整值×5 + 10</td><td>上限的2/3</td><td>完全恢复</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="wil-growth">三、事件完成后的愿力提升</h2>
+      <h3>3.1 核心规则</h3>
+      <p><strong>愿力水平与经历正相关</strong>。每完成一个事件，角色的愿力上限都可能获得提升，因为经历本身就在拓展认知的边界。</p>
+
+      <h3>3.2 任务类事件</h3>
+      <table class="wiki-table">
+        <thead><tr><th>任务等级</th><th>未完成</th><th>一般完成</th><th>完美完成</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Ⅱ级</strong></td><td>+0</td><td>+1</td><td>+2</td></tr>
+          <tr><td><strong>Ⅲ级</strong></td><td>+1</td><td>+2</td><td>+3</td></tr>
+          <tr><td><strong>Ⅳ级</strong></td><td>+2</td><td>+3</td><td>+4</td></tr>
+          <tr><td><strong>Ⅴ级</strong></td><td>+3</td><td>+4</td><td>+5</td></tr>
+        </tbody>
+      </table>
+      <blockquote><strong>完成度判定</strong>：<br>
+        - 失败（未完成）：未达成核心目标<br>
+        - 一般完成：达成了核心目标，可能有部分次要目标未完成，损失较严重<br>
+        - 完美完成：达成全部核心与次要目标，未造成可避免的额外损失<br>
+        - 特别的，若本次任务玩家角色出现减员，其余人愿力提升量-2</blockquote>
+
+      <h3>3.3 非任务事件</h3>
+      <p>非任务事件包括：角色间的情感互动、个人线进展、重要发现、成长契机等。</p>
+      <table class="wiki-table">
+        <thead><tr><th>事件类型</th><th>愿力提升</th><th>触发条件</th></tr></thead>
+        <tbody>
+          <tr><td><strong>情感深度交流</strong></td><td>1~2点</td><td>与重要NPC或其他PC进行了触及灵魂的对话</td></tr>
+          <tr><td><strong>个人线突破</strong></td><td>1~3点</td><td>完成了与角色源动力相关的关键节点</td></tr>
+          <tr><td><strong>直面恐惧</strong></td><td>1~2点</td><td>在非任务情境中直面并克服了自己的恐惧</td></tr>
+          <tr><td><strong>重大发现</strong></td><td>1~2点</td><td>发现了关于世界、历史或自身的隐藏真相</td></tr>
+          <tr><td><strong>失去与哀悼</strong></td><td>1~2点</td><td>经历重要之人的离去并妥善处理了哀伤</td></tr>
+          <tr><td><strong>和解与救赎</strong></td><td>1~3点</td><td>与过去的自己或他人达成和解</td></tr>
+        </tbody>
+      </table>
+      <blockquote>讲述者应<strong>酌情授予</strong>非任务事件的愿力提升，原则上<strong>不超过任务类事件的提升量</strong>。非任务事件的点数可以在事件结束后立即结算，也可以合并到任务结束后一并结算。</blockquote>
+
+      <h3>3.4 愿力提升的特殊限制</h3>
+      <table class="wiki-table">
+        <thead><tr><th>限制</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td><strong>同一事件不可重复结算</strong></td><td>每个事件仅结算一次愿力提升</td></tr>
+          <tr><td><strong>情感事件不宜频繁</strong></td><td>过度使用非任务事件获取点数会稀释其叙事意义</td></tr>
+          <tr><td><strong>上限无关</strong></td><td>愿力提升是<strong>永久性</strong>的，直接增加愿力上限</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="idle">四、任务之间的空闲时间</h2>
+      <p>在两次任务之间，角色可根据各自的时间安排在以下三项活动中选择：<strong>提升体魄</strong>、<strong>提升专精</strong>、<strong>观想新符文</strong>。</p>
+
+      <h3>4.1 体魄提升（线性成长）</h3>
+      <ul>
+        <li>每积累 <strong>14天</strong> 提升 <strong>1点</strong> 体魄</li>
+        <li>进度<strong>跨任务保留</strong>（如已积累7天，下段空闲时间继续积累满14天即可完成提升）</li>
+        <li>可在空闲时间的任意天数中分配</li>
+      </ul>
+      <table class="wiki-table">
+        <thead><tr><th>投入天数</th><th>获得进度</th><th>进度累计</th><th>结果</th></tr></thead>
+        <tbody>
+          <tr><td>1天</td><td>+1天</td><td>不足14天</td><td>进度保留</td></tr>
+          <tr><td>14天</td><td>+14天</td><td>达成</td><td>体魄 +1，进度归零</td></tr>
+          <tr><td>28天</td><td>+28天</td><td>达成两次</td><td>体魄 +2</td></tr>
+        </tbody>
+      </table>
+      <blockquote>体魄上限为20，达到上限后无法继续提升。</blockquote>
+
+      <h3 id="idle-spec">4.2 专精提升（概率成长）</h3>
+      <p>每天随机积累 <strong>1~4点</strong> 进度。当前进度 ÷ 10 = 目标等级时完成提升。</p>
+      <table class="wiki-table">
+        <thead><tr><th>当前等级</th><th>所需进度</th><th>期望天数</th></tr></thead>
+        <tbody>
+          <tr><td>0 → 1</td><td>10点</td><td>约 3~10天</td></tr>
+          <tr><td>1 → 2</td><td>20点</td><td>约 5~20天</td></tr>
+          <tr><td>2 → 3</td><td>30点</td><td>约 8~30天</td></tr>
+          <tr><td>3 → 4</td><td>40点</td><td>约 10~40天</td></tr>
+          <tr><td>4 → 5</td><td>50点</td><td>约 13~50天</td></tr>
+        </tbody>
+      </table>
+      <p><strong>具体规则：</strong></p>
+      <ul>
+        <li>每天进行 <strong>1次 1d4</strong> 投掷，作为当日积累的进度</li>
+        <li>进度达到目标值（等级×10）时，<strong>专精等级+1</strong>，进度减去目标值（如积累至12点，目标为10点，则升1级后剩余2点进入下一级）</li>
+        <li>进度<strong>跨任务保留</strong></li>
+      </ul>
+      <div class="callout warn">⚠ <strong>进度清空提醒</strong>：如果<strong>连续两次空闲时间</strong>都未进行<strong>专精训练</strong>，已有的专精进度会<strong>直接清空</strong>（不再跨任务保留）。</div>
+      <p><strong>每日进度示例：</strong></p>
+      <table class="wiki-table">
+        <thead><tr><th>日数</th><th>骰点</th><th>累计进度</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr><td>第1天</td><td>3</td><td>3/10</td><td>进行中</td></tr>
+          <tr><td>第2天</td><td>2</td><td>5/10</td><td>进行中</td></tr>
+          <tr><td>第3天</td><td>4</td><td>9/10</td><td>进行中</td></tr>
+          <tr><td>第4天</td><td>3</td><td>12/10</td><td><strong>完成！</strong> 等级+1，剩余2点计入下一级</td></tr>
+        </tbody>
+      </table>
+      <p><strong>影响因素（讲述者可调整）：</strong></p>
+      <table class="wiki-table">
+        <thead><tr><th>条件</th><th>每日骰子修正</th></tr></thead>
+        <tbody>
+          <tr><td>有导师指导</td><td>+1d2（额外骰）</td></tr>
+          <tr><td>资源充足</td><td>优势</td></tr>
+          <tr><td>环境艰苦</td><td>劣势</td></tr>
+        </tbody>
+      </table>
+
+      <h3 id="idle-rune">4.3 观想新符文</h3>
+      <p>观想符文需要<strong>一次性完成</strong>。如果中途被任务打断，下次空闲时进度减半（向下取整）。（符文条目见<a href="runes.html">符文库</a>）</p>
+      <h4>观想时间计算</h4>
+      <table class="wiki-table">
+        <thead><tr><th>符文平均算力消耗</th><th>基础观想天数</th></tr></thead>
+        <tbody>
+          <tr><td>≤10</td><td>7天</td></tr>
+          <tr><td>11~18</td><td>14天</td></tr>
+          <tr><td>19~24</td><td>21天</td></tr>
+          <tr><td>25~30</td><td>30天</td></tr>
+          <tr><td>31+</td><td>40天</td></tr>
+        </tbody>
+      </table>
+      <p><strong>计算公式：</strong></p>
+      <blockquote><strong>最终观想天数 = （基础天数² ÷ 算力系数 - 识质匹配 - 导师指导）×独立系数</strong>（向上取整）</blockquote>
+      <p>其中：</p>
+      <ul>
+        <li><strong>识质匹配</strong>：若角色的识质与该符文系谱的常用识质匹配，-2天</li>
+        <li><strong>导师指导</strong>：若有已掌握该符文的导师指导，-3天</li>
+        <li><strong>独立系数</strong>：某些符文具有的特殊修正值</li>
+      </ul>
+      <h4>进度规则</h4>
+      <table class="wiki-table">
+        <thead><tr><th>情况</th><th>进度处理</th></tr></thead>
+        <tbody>
+          <tr><td><strong>成功完成观想</strong></td><td>符文加入可用符文列表</td></tr>
+          <tr><td><strong>任务打断</strong></td><td>进度减半（向下取整），下次空闲时继续</td></tr>
+          <tr><td><strong>主动放弃</strong></td><td>进度归零</td></tr>
+          <tr><td><strong>观想失败（讲述者裁定）</strong></td><td>损失 1d6 愿力，进度归零</td></tr>
+        </tbody>
+      </table>
+      <div class="callout warn">⚠ <strong>进度清空提醒</strong>：如果<strong>连续两次空闲时间</strong>都未进行<strong>符文观想</strong>，已有的观想进度会<strong>直接清空</strong>。</div>
+      <p><strong>进度打断示例：</strong></p>
+      <blockquote>角色正在观想一个需要14天的符文。已完成9天，任务开始，中断。下次空闲时，观想进度为 9÷2 = 4.5 → <strong>4天</strong>，还需10天完成。</blockquote>
+
+      <h3>4.4 空闲时间选择总结</h3>
+      <table class="wiki-table">
+        <thead><tr><th>选择</th><th>机制</th><th>进度保留</th><th>适合情况</th></tr></thead>
+        <tbody>
+          <tr><td><strong>提升体魄</strong></td><td>线性积累，14天=1点</td><td>跨任务保留</td><td>需要提高生存能力或物理输出</td></tr>
+          <tr><td><strong>提升专精</strong></td><td>概率成长，每日1d4点，目标=等级×10</td><td>跨任务保留，溢出保留</td><td>希望特化某一技能</td></tr>
+          <tr><td><strong>观想新符文</strong></td><td>固定天数，须一次性完成</td><td>中断时减半</td><td>希望获得新的战斗或战术选项</td></tr>
+        </tbody>
+      </table>
+      <p class="diagram-note">注：专精训练与符文观想的进度，若<strong>连续两次空闲时间</strong>未进行对应活动，将<strong>直接清空</strong>；体魄进度不受影响，始终跨任务保留。</p>
+
+      <h2 id="special">五、特殊情况下的点数提升</h2>
+      <p>除标准规则外，角色在冒险中可能因特殊事件获得额外的成长机会。若无特殊说明，<strong>该条目下的每种情况对每个角色最多只会生效一次</strong>。</p>
+
+      <h3>5.1 奇遇</h3>
+      <table class="wiki-table">
+        <thead><tr><th>情况</th><th>可获得奖励</th><th>条件</th></tr></thead>
+        <tbody>
+          <tr><td><strong>经历生死考验</strong></td><td>体魄 +1 / 物理抗性 +1</td><td>在战斗中濒死（HP≤0）后幸存</td></tr>
+          <tr><td><strong>禁忌的知识</strong></td><td>愿力 +2 / 神秘学 +1（同时立刻受到 1d4 混沌伤害）</td><td>接触了危险性极高的知识</td></tr>
+        </tbody>
+      </table>
+
+      <h3>5.2 情感羁绊</h3>
+      <table class="wiki-table">
+        <thead><tr><th>情况</th><th>可获得奖励</th><th>条件</th></tr></thead>
+        <tbody>
+          <tr><td><strong>拯救重要之人</strong></td><td>愿力 +2</td><td>在任务中优先救援了重要NPC或队友</td></tr>
+          <tr><td><strong>建立深刻羁绊</strong></td><td>专精：话术 +1 或 察言观色 +1</td><td>与NPC或队友达成了深度的情感连接</td></tr>
+          <tr><td><strong>自我牺牲</strong></td><td>体魄 +1 或 愿力 +3</td><td>主动承担危险以保护他人（讲述者裁定）</td></tr>
+        </tbody>
+      </table>
+
+      <h3>5.3 角色成长里程碑</h3>
+      <table class="wiki-table">
+        <thead><tr><th>里程碑</th><th>奖励</th></tr></thead>
+        <tbody>
+          <tr><td><strong>完成个人线核心目标</strong></td><td>愿力 +3 + 可选一个专精 +1</td></tr>
+          <tr><td><strong>识质转变（重大心境变化）</strong></td><td>愿力 +2，且识质描述可更新</td></tr>
+          <tr><td><strong>直面源动力源头</strong></td><td>愿力 +2，解开心结（讲述者可给予额外奖励）</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="record">六、成长进度记录表</h2>
+      <p>建议玩家在角色卡上单独保留以下进度记录：</p>
+      <h3>体魄进度</h3>
+      <table class="wiki-table">
+        <thead><tr><th>项目</th><th>记录</th></tr></thead>
+        <tbody>
+          <tr><td><strong>当前体魄</strong></td><td>___ / 20</td></tr>
+          <tr><td><strong>体魄进度</strong></td><td>___ / 14 天</td></tr>
+        </tbody>
+      </table>
+      <h3>专精进度（按专精分别记录）</h3>
+      <table class="wiki-table">
+        <thead><tr><th>专精</th><th>等级</th><th>进度</th></tr></thead>
+        <tbody>
+          <tr><td>调查</td><td>___</td><td>___ / ___</td></tr>
+          <tr><td>神秘学</td><td>___</td><td>___ / ___</td></tr>
+          <tr><td>格斗</td><td>___</td><td>___ / ___</td></tr>
+          <tr><td>潜行</td><td>___</td><td>___ / ___</td></tr>
+          <tr><td>追踪</td><td>___</td><td>___ / ___</td></tr>
+          <tr><td>话术</td><td>___</td><td>___ / ___</td></tr>
+          <tr><td>察言观色</td><td>___</td><td>___ / ___</td></tr>
+          <tr><td>野外生存</td><td>___</td><td>___ / ___</td></tr>
+          <tr><td>急救</td><td>___</td><td>___ / ___</td></tr>
+          <tr><td>机械修理</td><td>___</td><td>___ / ___</td></tr>
+          <tr><td>外语</td><td>___</td><td>___ / ___</td></tr>
+          <tr><td>灵感</td><td>___</td><td>___ / ___</td></tr>
+        </tbody>
+      </table>
+      <h3>观想符文进度（如有进行中）</h3>
+      <table class="wiki-table">
+        <thead><tr><th>项目</th><th>记录</th></tr></thead>
+        <tbody>
+          <tr><td><strong>符文名称</strong></td><td>____________</td></tr>
+          <tr><td><strong>系谱</strong></td><td>____________</td></tr>
+          <tr><td><strong>消耗算力</strong></td><td>___</td></tr>
+          <tr><td><strong>已投入天数</strong></td><td>___ / 总需天数：___</td></tr>
+          <tr><td><strong>状态</strong></td><td>进行中 / 中断（进度减半后为 ___ 天）</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout info">相关：<a href="guide.html">角色创建指南</a> · <a href="combat.html">战斗规则</a> · <a href="runes.html">符文库</a></div>
+    </article>
+    <footer class="page-footer">
+      <a href="index.html">远梦之光 · 规则 Wiki</a> · 内容基于《远梦之光》规则文档 v0.1 整理 · <a href="about.html">关于</a>
+    </footer>
+  </main>
+</div>
+<script>window.NAV = { base: "", page: "explore", sub: "" };</script>
+<script src="js/rune-data.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/narrator.js"></script>
+<script src="js/unlock.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/search.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>

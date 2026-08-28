@@ -1,0 +1,196 @@
+/* ==========================================================================
+   夜间模式（body.theme-dark 时生效）
+   通过覆盖 CSS 变量实现整体换肤，另对硬编码白色的控件做针对性修复。
+   ========================================================================== */
+
+body.theme-dark {
+  --sidebar-bg: #10141c;
+  --sidebar-fg: #a9b4c7;
+  --sidebar-fg-dim: #6d7890;
+  --sidebar-active: #ffffff;
+  --sidebar-active-bg: #26324a;
+  --sidebar-hover-bg: #1a2230;
+  --accent: #6d8bff;
+  --accent-soft: #232d4a;
+  --accent-deep: #93aaff;
+  --gold: #d9a84e;
+  --gold-soft: #3a3320;
+  --green: #4cbf87;
+  --green-soft: #1e3528;
+  --red: #e07a6d;
+  --red-soft: #3a2422;
+  --purple: #a78bfa;
+  --purple-soft: #2c2440;
+  --purple-border: #4a3a6b;
+  --page-bg: #14181f;
+  --content-bg: #1c222c;
+  --text: #d6dce7;
+  --text-dim: #8d97ab;
+  --border: #303a4a;
+  --table-head-bg: #35425c;
+  --code-bg: #232b38;
+  --shadow: 0 1px 4px rgba(0, 0, 0, .4);
+}
+
+/* ---------- 基础 ---------- */
+
+body.theme-dark { background: var(--page-bg); color: var(--text); }
+
+body.theme-dark strong { color: #eef2f9; }
+
+body.theme-dark a { color: var(--accent-deep); }
+
+body.theme-dark .page,
+body.theme-dark .card-preview,
+body.theme-dark .home-card,
+body.theme-dark .rune-pick,
+body.theme-dark details.rune-family { background: var(--content-bg); }
+
+body.theme-dark table.wiki-table { background: transparent; }
+body.theme-dark table.wiki-table thead th { background: var(--table-head-bg); color: #eef2f9; }
+body.theme-dark table.wiki-table tbody tr:nth-child(even) { background: #202734; }
+body.theme-dark table.wiki-table tbody tr:hover { background: #252e41; }
+body.theme-dark table.wiki-table th,
+body.theme-dark table.wiki-table td { border-color: var(--border); }
+
+body.theme-dark blockquote { background: var(--accent-soft); color: #c4cde8; }
+
+body.theme-dark .callout.info { background: var(--accent-soft); border-color: #33406b; color: #c4cde8; }
+body.theme-dark .callout.warn { background: var(--gold-soft); border-color: #5a4c26; color: #e2c78a; }
+body.theme-dark .callout.danger { background: var(--red-soft); border-color: #6b3a34; color: #eda69c; }
+
+body.theme-dark .badge.player { background: var(--green-soft); color: var(--green); border-color: #2f5c44; }
+body.theme-dark .badge.miracle { background: var(--gold-soft); color: var(--gold); border-color: #5f4d24; }
+body.theme-dark .badge.npc { background: #262e3a; color: var(--text-dim); border-color: var(--border); }
+
+body.theme-dark code, body.theme-dark .dice { background: var(--code-bg); border-color: #3a4455; color: #f0a97e; }
+
+body.theme-dark pre.flow { background: #0d1117; color: #c6d2e6; }
+
+/* ---------- 表单 / 控件 ---------- */
+
+body.theme-dark .field input[type="text"],
+body.theme-dark .field input[type="number"],
+body.theme-dark .field textarea,
+body.theme-dark .field select,
+body.theme-dark .unlock-row input,
+body.theme-dark .search-box input,
+body.theme-dark .st-row select {
+  background: #141922;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+body.theme-dark .attr-box,
+body.theme-dark .derived-item,
+body.theme-dark .toc {
+  background: #202734;
+  border-color: var(--border);
+}
+
+body.theme-dark .attr-box input { background: #141922; color: var(--text); border-color: var(--border); }
+body.theme-dark .attr-box input.warn { border-color: var(--red); color: var(--red); background: var(--red-soft); }
+
+body.theme-dark .btn { background: #232b38; border-color: var(--border); color: var(--text); }
+body.theme-dark .btn:hover { border-color: var(--accent); color: var(--accent-deep); }
+body.theme-dark .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+body.theme-dark .btn.primary:hover { background: var(--accent-deep); color: #fff; }
+
+body.theme-dark .stepper button,
+body.theme-dark .rune-quicknav button,
+body.theme-dark .gene-quicknav button,
+body.theme-dark .gear-btn {
+  background: #232b38;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+body.theme-dark .stepper button:hover:not(:disabled),
+body.theme-dark .rune-quicknav button:hover,
+body.theme-dark .gene-quicknav button:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-deep); }
+
+body.theme-dark .rune-quicknav button.on,
+body.theme-dark .gene-quicknav button.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-deep); }
+
+body.theme-dark details.rune-family[open] summary,
+body.theme-dark details.gene-family[open] summary { background: var(--table-head-bg); }
+body.theme-dark details.rune-family .rune-pick,
+body.theme-dark details.gene-family .gene-pick { border-color: #262e3a; }
+body.theme-dark .gene-pick .gp-note { color: var(--accent-deep); }
+
+/* ---------- 搜索 / 目录 / 弹窗 ---------- */
+
+body.theme-dark .search-results {
+  background: var(--content-bg);
+  border-color: var(--border);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .5);
+}
+
+body.theme-dark .sr-item { color: var(--text); border-color: #262e3a; }
+body.theme-dark .sr-item:hover { background: var(--accent-soft); }
+body.theme-dark .sr-item .sr-cat { color: var(--text-dim); border-color: var(--border); }
+
+body.theme-dark .toc-panel a { color: var(--text-dim); }
+body.theme-dark .toc-panel a:hover { color: var(--accent-deep); }
+body.theme-dark .toc-panel a.active { color: var(--accent-deep); background: var(--accent-soft); }
+
+body.theme-dark .narrator-modal .nm-box,
+body.theme-dark .settings-modal .st-box { background: var(--content-bg); color: var(--text); }
+body.theme-dark .narrator-modal .nm-text { color: var(--text); }
+
+body.theme-dark .card-preview pre { color: #cfd6e3; }
+body.theme-dark .card-preview .cp-head { background: #0f131b; }
+
+body.theme-dark .home-card .hc-title a { color: var(--text); }
+body.theme-dark .home-card .hc-title a:hover { color: var(--accent-deep); }
+
+body.theme-dark .unlock-status .us-item { background: #232b38; border-color: var(--border); color: var(--text-dim); }
+body.theme-dark .unlock-status .us-item.done { background: var(--green-soft); color: var(--green); border-color: #2f5c44; }
+
+/* ---------- 折叠标签 / 紫色提示（夜间适配） ---------- */
+
+body.theme-dark details { background: var(--content-bg); border-color: var(--border); }
+body.theme-dark details summary { color: var(--text); }
+body.theme-dark details summary:hover,
+body.theme-dark details[open] summary { background: var(--table-head-bg); }
+body.theme-dark details summary::marker { color: var(--accent-deep); }
+
+body.theme-dark .callout.dev { background: var(--purple-soft); border-color: var(--purple-border); color: #c9bcf5; }
+body.theme-dark .badge.dev { background: var(--purple-soft); color: var(--purple); border-color: var(--purple-border); }
+
+/* ---------- 基因系统（夜间适配） ---------- */
+
+body.theme-dark tr.gene-common td { background: #202734; }
+body.theme-dark tr.gene-rare td { background: #1b283c; }
+body.theme-dark tr.gene-epic td { background: #2e2919; }
+body.theme-dark tr.gene-negative td { background: #30211f; }
+
+body.theme-dark .gene-pick.gene-common { background: #202734; }
+body.theme-dark .gene-pick.gene-rare { background: #1b283c; }
+body.theme-dark .gene-pick.gene-epic { background: #2e2919; }
+body.theme-dark .gene-pick.gene-negative { background: #30211f; }
+
+body.theme-dark .gene-badge.common { background: #262e3a; color: #8d97ab; border-color: #303a4a; }
+body.theme-dark .gene-badge.rare { background: #16283f; color: #7fb0e8; border-color: #2c4a70; }
+
+body.theme-dark .gene-counts select { background: #141922; color: var(--text); border-color: var(--border); }
+
+body.theme-dark .gene-result-item.gene-common { background: #262e3a; border-color: #303a4a; }
+body.theme-dark .gene-result-item.gene-rare { background: #16283f; border-color: #2c4a70; }
+body.theme-dark .gene-result-item.gene-epic { background: #3a3320; border-color: #5f4d24; }
+body.theme-dark .gene-result-item.gene-negative { background: #3a2422; border-color: #6b3a34; }
+
+/* ---------- 视图切换 / SVG 示意图（夜间适配） ---------- */
+
+body.theme-dark .vs-btn { background: #141922; color: var(--text); border-color: var(--border); }
+body.theme-dark .vs-btn:hover { border-color: var(--accent); color: var(--accent-deep); }
+body.theme-dark .vs-btn.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+body.theme-dark .diagram-frame { background: var(--content-bg); border-color: var(--border); }
+
+body.theme-dark .flow-start { fill: #1d2b22; stroke: #43a047; }
+body.theme-dark .flow-proc { fill: #1c2736; stroke: #4a90d9; }
+body.theme-dark .flow-dec { fill: #2c2618; stroke: #fb8c00; }
+body.theme-dark .flow-line { stroke: #7a8496; }
+
+body.theme-dark .xy-node circle { fill: #1c222c; }

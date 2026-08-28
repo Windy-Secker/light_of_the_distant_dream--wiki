@@ -1,0 +1,2 @@
+﻿# 本地测试依赖（jsdom），可随时用 npm install 重新生成
+tools/.domtest/node_modules/

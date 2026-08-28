@@ -1,0 +1,32 @@
+const fs = require("fs");
+const path = require("path");
+const { JSDOM } = require("jsdom");
+const ROOT = process.cwd();
+const html = fs.readFileSync(path.join(ROOT, "combat.html"), "utf8");
+const dom = new JSDOM(html, { url: "http://127.0.0.1/combat.html", runScripts: "outside-only", pretendToBeVisual: true });
+const { window } = dom;
+const { document } = window;
+["js/rune-data.js", "js/nav.js", "js/narrator.js", "js/unlock.js", "js/combat.js"].forEach((s) => {
+  window.eval(fs.readFileSync(path.join(ROOT, s), "utf8"));
+});
+document.dispatchEvent(new window.Event("DOMContentLoaded", { bubbles: true }));
+document.querySelector('#xy-sub button[data-sub="ke"]').click();
+const xySvg = document.getElementById("xy-diagram");
+const svgKe = Array.from(xySvg.querySelectorAll(".xy-line-ke")).map((l) => l.getAttribute("data-from") + ">" + l.getAttribute("data-to")).sort();
+const FAMILIES = ["物质", "能量", "空间", "生命", "意识", "因果", "时间", "解构"];
+const rows = Array.from(document.querySelectorAll('.view-pane[data-pane="xy-table"] table')[1].querySelectorAll("tbody tr"));
+const tableKe = [];
+rows.forEach((tr) => {
+  const c = tr.querySelectorAll("td");
+  const a = c[0].textContent.trim();
+  const raw = c[1].textContent.trim();
+  let targets;
+  if (raw === "除时间外") targets = FAMILIES.filter((f) => f !== "时间" && f !== a);
+  else targets = raw.split("、").map((s) => s.trim()).filter(Boolean);
+  targets.forEach((t) => tableKe.push(a + ">" + t));
+});
+tableKe.sort();
+console.log("--- SVG:", svgKe.join(" "));
+console.log("--- 表格:", tableKe.join(" "));
+console.log("SVG 独有:", svgKe.filter((x) => tableKe.indexOf(x) === -1).join(" ") || "(无)");
+console.log("表格独有:", tableKe.filter((x) => svgKe.indexOf(x) === -1).join(" ") || "(无)");

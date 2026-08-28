@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海德里斯语 · 词典 - 远梦之光 · 规则 Wiki</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/night.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar"></aside>
+  <main class="content">
+    <article class="page lock-hyderisi">
+      <div class="hyd-locked callout warn">该条目已<strong>锁定</strong>：解锁码由讲述者在剧情中发放，输入正确解锁码或开启<strong>讲述者模式</strong>后方可查看。<br><strong>本条目解锁码：hyderisi</strong>（解锁入口位于<strong>主页底部</strong>）</div>
+
+      <div class="hyd-content">
+        <div class="breadcrumb"><a href="../index.html">主页</a> / <a href="../hydris.html">海德里斯语</a> / 词典</div>
+        <h1>海德里斯语 · 词典</h1>
+        <p class="subtitle">词典查找与互译工具 · 词典共 463 词条（含发音与词性）</p>
+
+        <div class="callout info">
+          <strong>使用说明：</strong>「词汇查找」输入<strong>词形</strong>（如 <code>kare</code>）或<strong>中文释义</strong>（如“月球人”）即可检索；<br>
+          下方的「互译」为<strong>实验性功能</strong>，选择方向后在左侧输入完整句子，右侧输出译文。
+        </div>
+
+        <h2>一、词汇查找</h2>
+        <div class="field">
+          <input type="text" id="dict-input" placeholder="输入词形或中文释义，如：kare / 月球人 / 太阳">
+          <div class="hint" id="dict-count"></div>
+        </div>
+        <table class="wiki-table" id="dict-results">
+          <thead><tr><th>词形</th><th>发音（IPA）</th><th>词性</th><th>释义</th></tr></thead>
+          <tbody></tbody>
+        </table>
+
+        <h2>二、互译 <span class="badge dev">实验性</span></h2>
+        <div class="callout dev">
+          <strong>实验性功能说明：</strong>互译模块仍在开发中，目前的工作方式与限制如下——<br>
+          · <strong>海 → 中</strong>：按词典做逐词最长匹配并译出（取释义的首个片段，保证可读）；<br>
+          · <strong>中 → 海</strong>：本质是<strong>词典反查</strong>，适合词/短语级别的翻译；整句中文暂时无法真正“造句”；<br>
+          · 无论哪个方向，<strong>匹配不上的词都会直接保留原文</strong>（而不是被丢弃或乱猜）。
+        </div>
+        <div class="field">
+          <label for="tr-dir">翻译方向</label>
+          <select id="tr-dir" style="max-width:260px">
+            <option value="h2z">海德里斯语 → 中文</option>
+            <option value="z2h">中文 → 海德里斯语</option>
+          </select>
+        </div>
+        <div class="tr-grid">
+          <div class="field">
+            <label for="tr-input">输入（整句）</label>
+            <textarea id="tr-input" rows="5" placeholder="在此输入完整句子"></textarea>
+          </div>
+          <div class="field">
+            <label for="tr-output">输出（译文）</label>
+            <textarea id="tr-output" rows="5" readonly placeholder="翻译结果将显示在这里（匹配不上的词会保留原文）"></textarea>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button type="button" class="btn primary" id="tr-go">翻译</button>
+          <button type="button" class="btn" id="tr-demo">填入示例</button>
+          <button type="button" class="btn" id="tr-copy">复制译文</button>
+          <button type="button" class="btn" id="tr-clear">清空</button>
+        </div>
+        <details>
+          <summary>查看逐词注疏</summary>
+          <div id="tr-detail"></div>
+        </details>
+      </div>
+    </article>
+    <footer class="page-footer">
+      <a href="../index.html">远梦之光 · 规则 Wiki</a> · 内容基于《远梦之光》规则文档 v0.1 整理 · <a href="../about.html">关于</a>
+    </footer>
+  </main>
+</div>
+<script>window.NAV = { base: "../", page: "hydris", sub: "词典" };</script>
+<script src="../js/rune-data.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/narrator.js"></script>
+<script src="../js/unlock.js"></script>
+<script src="../js/toc.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/settings.js"></script>
+<script src="../js/hydris-data.js"></script>
+<script src="../js/hydris.js"></script>
+</body>
+</html>
