@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>符文库 - 远梦之光 · 规则 Wiki</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/night.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar"></aside>
+  <main class="content">
+    <article class="page">
+<div class="breadcrumb"><a href="index.html">主页</a> / 符文库</div>
+<h1>符文库</h1>
+<p class="subtitle">按系谱分类整理所有可用符文，点击表格中的符文名可进入该符文的独立条目。</p>
+
+<h2>如何阅读符文库</h2>
+<p>本页按<strong>系谱分类</strong>整理所有可用符文。每个系谱以<strong>简要索引表</strong>开头，方便快速查阅；每个符文名链接至<strong>独立条目</strong>，其中包含完整的详细说明（判定标准与数值规则）。</p>
+
+<h3>符文详细条目的字段说明</h3>
+<table class="wiki-table">
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td><strong>学名</strong></td><td>符文的标准名称</td></tr>
+<tr><td><strong>系谱分类</strong></td><td>所属的八个系谱之一</td></tr>
+<tr><td><strong>平均算力消耗</strong></td><td>维持该符文所需占用的算力值。<span class="gm-only">奇迹标注为「—」</span></td></tr>
+<tr><td><strong>伤害类型</strong></td><td>物理/符文/灵魂/混沌/解构 / 无（非攻击型）</td></tr>
+<tr><td><strong>基础效果</strong></td><td>符文的核心功能</td></tr>
+<tr><td><strong>愿力投入效果</strong></td><td>每额外投入<strong>10</strong>点愿力的具体增幅</td></tr>
+<tr><td><strong>判定标准</strong></td><td>使用该符文时需要进行的检定公式与DC</td></tr>
+<tr><td><strong>特殊规则</strong></td><td>独有的限制、副作用或附加条件</td></tr>
+<tr><td><strong>适用场景</strong></td><td>战斗/侦查/社交/生存等</td></tr>
+</tbody>
+</table>
+
+<h3 class="gm-only">常规符文 vs 奇迹</h3>
+<ul class="gm-only">
+<li><strong>常规符文</strong>：具有明确的平均算力消耗，可被学习和观想，满足条件即可使用。</li>
+<li><strong>奇迹</strong>：算力消耗标注为「—」，不计入常规算力消耗；具有共同性质：
+  <ul>
+    <li>一定会作为灵魂记忆出现</li>
+    <li>同时只能由一人继承</li>
+    <li>无法解析/刻录/脱离灵魂发动</li>
+  </ul>
+</li>
+</ul>
+<div class="callout warn gm-only">⚠ 有关「奇迹」的更深层设定、具体资料与名称，仅<strong>讲述者模式</strong>可见。请在侧边栏开启「讲述者模式」查看。</div>
+<h2 id="物质系">一、物质系</h2>
+<p class="family-core">操纵实体物质——土、金属、水流、风、物理结构等。主要造成物理伤害。</p>
+<table class="wiki-table">
+<thead><tr><th>符文名</th><th>算力消耗</th><th>基础效果简述</th></tr></thead>
+<tbody>
+<tr class=""><td><a class="rune-link" href="runes/%E5%B4%A9%E5%9D%8F.html">崩坏</a></td><td>18</td><td>使指定物质结构发生崩解，化为碎片或粉末</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E5%AC%97%E5%8F%98.html">嬗变</a></td><td>20</td><td>将一种物质转化为另一种物质（同质量）</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E6%B9%AE%E7%81%AD%E4%B9%8B%E5%85%89.html">湮灭之光</a></td><td>28</td><td>将目标物质完全转化为光能，造成高额物理伤害</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E5%A4%B1%E8%B0%90.html">失谐</a></td><td>16</td><td>使目标物质结构的固有频率发生偏移，导致结构解体</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E7%BB%9D%E5%AF%B9%E5%88%9A%E4%BD%93.html">绝对刚体</a></td><td>14</td><td>使物质在短时间内获得不可变形的绝对刚性</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E9%AA%A8%E8%B4%A8%E7%96%8F%E6%9D%BE.html">骨质疏松</a></td><td>12</td><td>使指定目标的“骨架”物理性质临时变脆</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E7%90%86%E6%83%B3%E9%95%9C%E9%9D%A2.html">理想镜面</a></td><td>18</td><td>领域：区域内所有物体表面失去摩擦力</td></tr>
+</tbody>
+</table>
+<h2 id="能量系">二、能量系</h2>
+<p class="family-core">操纵纯能量——光、电、热、冲击、寒冰。主要造成符文伤害。</p>
+<table class="wiki-table">
+<thead><tr><th>符文名</th><th>算力消耗</th><th>基础效果简述</th></tr></thead>
+<tbody>
+<tr class=""><td><a class="rune-link" href="runes/%E5%86%B0%E9%A3%8E%E6%9A%B4.html">冰风暴</a></td><td>16</td><td>制造极寒风暴，冻结范围内目标并造成符文伤害</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E5%85%89%E6%9D%9F.html">光束</a></td><td>8</td><td>从手中射出一道高能光束，造成符文伤害</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E9%9C%87%E8%8D%A1.html">震荡</a></td><td>14</td><td>以振动波攻击目标，穿透物理防御</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E8%B4%A8%E6%80%81%E8%BD%AC%E5%8F%98.html">质态转变</a></td><td>可变</td><td>使一定量物质发生固态/液态/气态转变</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E7%86%94%E7%82%89.html">熔炉</a></td><td>20</td><td>领域：持续加热领域内所有物体</td></tr>
+</tbody>
+</table>
+<h2 id="空间系">三、空间系</h2>
+<p class="family-core">操纵空间结构——传送、扭曲、结界、屏障。主要造成符文伤害或解构伤害。</p>
+<table class="wiki-table">
+<thead><tr><th>符文名</th><th>算力消耗</th><th>基础效果简述</th></tr></thead>
+<tbody>
+<tr class=""><td><a class="rune-link" href="runes/%E7%BB%9D%E5%AF%B9%E7%AB%8B%E5%9C%BA.html">绝对立场</a></td><td>20</td><td>选定区域免疫所有伤害类型，持续有限时间</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E4%BC%A0%E9%80%81.html">传送</a></td><td>22</td><td>将施术者或接触目标瞬间移动到视线内的位置</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E8%8C%A7.html">茧</a></td><td>12</td><td>以符文丝线包裹目标，形成封印/保护屏障</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E9%81%81%E9%9A%90.html">遁隐</a></td><td>10</td><td>将自身沉入空间夹缝，隐匿身形与气息</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E9%93%B6%E9%94%8B.html">银锋</a></td><td>16</td><td>凝聚空间裂隙为锋刃，斩断目标</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E9%94%81%E5%AE%9A.html">锁定</a></td><td>12</td><td>以空间坐标锁定目标，使其无法移动/传送</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E6%AD%BB%E7%BA%BF.html">死线</a></td><td>22</td><td>在空间中划出一道不可逾越的“死亡边界”</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E5%8E%8B%E7%BC%A9.html">压缩</a></td><td>18</td><td>将指定区域的空间进行压缩，对内部物体造成伤害</td></tr>
+</tbody>
+</table>
+<h2 id="生命系">四、生命系</h2>
+<p class="family-core">操纵生命本身——治疗、感知生命力、操控生物、生命汲取、生死转化。主要造成符文伤害（毒性/腐蚀）或灵魂伤害（汲取）。</p>
+<table class="wiki-table">
+<thead><tr><th>符文名</th><th>算力消耗</th><th>基础效果简述</th></tr></thead>
+<tbody>
+<tr class=""><td><a class="rune-link" href="runes/%E5%BE%B7%E5%A2%A8%E5%BF%92%E5%B0%94%E4%B9%8B%E5%BF%83.html">德墨忒尔之心</a></td><td>24</td><td>与周围植物共感并操纵其生长与行动</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E7%94%9F%E6%9C%BA%E6%84%9F%E7%9F%A5.html">生机感知</a></td><td>5</td><td>感知周围生物的生命力波动</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E5%87%8B%E9%9B%B6.html">凋零</a></td><td>16</td><td>加速范围内生物的生命衰亡，造成灵魂伤害</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E6%9E%AF%E8%8D%A3.html">枯荣</a></td><td>18</td><td>吸收一个目标的生机，将其转移至另一个目标</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E5%A4%8D%E8%8B%8F.html">复苏</a></td><td>20</td><td>加速生物的自然愈合过程，治疗伤势</td></tr>
+<tr class="gm-only u-miracle03"><td><a class="rune-link" href="runes/%E9%80%86%E7%81%B5%E8%BD%AC%E7%94%9F.html">逆灵转生</a> <span class="badge miracle">奇迹</span></td><td>—</td><td>以自己的生命为代价，将目标恢复至完全健康</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E7%8B%82%E6%80%92.html">狂怒</a></td><td>14</td><td>使目标进入狂暴状态，提升攻击力但降低理智</td></tr>
+</tbody>
+</table>
+<h2 id="意识系">五、意识系</h2>
+<p class="family-core">操纵心智与灵魂——念力、幻术、灵魂攻击、认知干预。主要造成灵魂伤害。</p>
+<table class="wiki-table">
+<thead><tr><th>符文名</th><th>算力消耗</th><th>基础效果简述</th></tr></thead>
+<tbody>
+<tr class=""><td><a class="rune-link" href="runes/%E6%A2%A6%E5%A2%83%E6%8E%A8%E6%BC%94.html">梦境推演</a></td><td>12</td><td>感官与环境同步扫描，可定格场景进行干涉</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E4%B8%9A%E7%81%AB.html">业火</a></td><td>18</td><td>制造灼烧灵魂的火焰</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E5%85%B1%E6%84%9F%E9%93%BE%E6%8E%A5.html">共感链接</a></td><td>6</td><td>与一人建立短暂心灵感应</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E6%A2%A6%E9%AD%87.html">梦魇</a></td><td>16</td><td>将目标拖入恐惧幻象，造成灵魂伤害与心智冲击</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E7%9C%9F%E5%AE%9E%E4%B9%8B%E7%9C%BC.html">真实之眼</a></td><td>14</td><td>看破伪装、幻术和隐藏的符文结构</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E8%AF%B7.html">请</a></td><td>8</td><td>对目标下达一个有限指令的催眠术</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E4%BF%A1%E4%BB%B0%E9%9B%86%E7%BB%93.html">信仰集结</a></td><td>20</td><td>将自愿目标们的算力和愿力临时纳入施术者控制</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E6%B8%85%E6%98%8E%E6%A2%A6.html">清明梦</a></td><td>16</td><td>领域：将周围的目标拖入清醒的梦境中</td></tr>
+</tbody>
+</table>
+<h2 id="因果系">六、因果系</h2>
+<p class="family-core">操纵可能性——命运、概率扭曲、意象提取、因果链干预。主要造成灵魂伤害或解构伤害。</p>
+<table class="wiki-table">
+<thead><tr><th>符文名</th><th>算力消耗</th><th>基础效果简述</th></tr></thead>
+<tbody>
+<tr class=""><td><a class="rune-link" href="runes/%E6%B7%B7%E6%B2%8C%E6%9E%B7%E9%94%81.html">混沌枷锁</a></td><td>22</td><td>禁锢混沌目标，剥夺行动能力</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E4%BA%BA%E5%B7%A5%E9%99%8D%E9%9B%A8.html">人工降雨</a></td><td>10</td><td>提取“发射信号弹即降雨”的意象制造降雨</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E9%95%9C%E8%8A%B1%E6%B0%B4%E6%9C%88.html">镜花水月</a></td><td>14</td><td>将相似物体转化为目标的幻影</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E7%9C%BC%E8%A7%81%E4%B8%BA%E5%AE%9E.html">眼见为实</a></td><td>16</td><td>将目标对现实的认知投射到现实中</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E5%91%BD%E8%BF%90.html">命运</a></td><td>26</td><td>短暂修改一个事件的发生概率，重塑因果链</td></tr>
+<tr class="gm-only u-miracle01"><td><a class="rune-link" href="runes/%E8%99%9A%E6%9E%84%E8%A7%82%E6%83%B3.html">虚构观想</a> <span class="badge miracle">奇迹</span></td><td>—</td><td>瞬间完成任意符文的完全解析与构造</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E6%97%A0%E6%81%AF%E8%B4%B7%E6%AC%BE.html">无息贷款</a></td><td>12</td><td>预支未来的行动力于此刻使用</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E5%8B%87%E8%80%85%E6%96%97%E6%81%B6%E9%BE%99.html">勇者斗恶龙</a></td><td>22</td><td>为五个目标分配身份，获得增益与减益</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E4%B8%8D%E8%A6%81%E5%81%9A%E6%8C%91%E6%88%98.html">不要做挑战</a></td><td>20</td><td>领域：订立一条规则，违反者受到伤害</td></tr>
+</tbody>
+</table>
+<h2 id="时间系">七、时间系</h2>
+<p class="family-core">操纵时间流——加速、减速、预知、回响。主要造成灵魂伤害（老化）或符文伤害（时间断层）。</p>
+<table class="wiki-table">
+<thead><tr><th>符文名</th><th>算力消耗</th><th>基础效果简述</th></tr></thead>
+<tbody>
+<tr class=""><td><a class="rune-link" href="runes/%E5%A4%8D%E6%BC%94.html">复演</a></td><td>14</td><td>复现某一区域在过去的某个时间节点的状态</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E6%97%B6%E5%BA%8F%E6%AE%8B%E5%93%8D.html">时序残响</a></td><td>24</td><td>短暂召回过去时刻的“回响”，形成攻击或防御</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E6%BA%AF.html">溯</a></td><td>20</td><td>将自身位置和行动倒回n秒之前</td></tr>
+<tr class=""><td><a class="rune-link" href="runes/%E9%9D%9E%E7%AD%89%E6%B5%81%E9%80%9F.html">非等流速</a></td><td>22</td><td>承受伤害，使自身时间流速先加快后变慢</td></tr>
+</tbody>
+</table>
+<h2 id="解构系">八、解构系</h2>
+<p class="family-core">瓦解符文结构，构造的反面。不直接造成生命值伤害，专精于反制其它符文使用者。</p>
+<table class="wiki-table">
+<thead><tr><th>符文名</th><th>算力消耗</th><th>基础效果简述</th></tr></thead>
+<tbody>
+<tr class="gm-only u-miracle02"><td><a class="rune-link" href="runes/%E5%AE%9A%E7%95%8C%E5%B9%BB%E7%81%AD.html">定界幻灭</a> <span class="badge miracle">奇迹</span></td><td>—</td><td>摧毁作用范围内所有的「定界」（符文边界与框架）</td></tr>
+</tbody>
+</table>
+
+    </article>
+    <footer class="page-footer">
+      <a href="index.html">远梦之光 · 规则 Wiki</a> · 内容基于《远梦之光》规则文档 v0.1 整理 · <a href="about.html">关于</a>
+    </footer>
+  </main>
+</div>
+<script>window.NAV = { base: "", page: "runes", sub: "" };</script>
+<script src="js/rune-data.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/narrator.js"></script>
+<script src="js/unlock.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/search.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>

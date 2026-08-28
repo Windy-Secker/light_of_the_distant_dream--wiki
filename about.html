@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于 - 远梦之光 · 规则 Wiki</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/night.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar"></aside>
+  <main class="content">
+    <article class="page">
+      <h1>关于</h1>
+      <p class="subtitle">本站的版权信息、内容来源与开源项目声明</p>
+
+      <h2>关于本站</h2>
+      <p>「远梦之光 · 规则 Wiki」是《远梦之光》TRPG 规则文档（v0.1）的在线整理版，将规则文档整理为可浏览、可交互的 Wiki 站点：</p>
+      <ul>
+        <li><strong>世界观</strong>：世界的基本法则与底层设定，下半部分为<strong>讲述者专属信息</strong>（需开启「讲述者模式」查看与搜索）；含「种族」子分页（生物分类与伤害速查表）；</li>
+        <li><strong>组织</strong>：梦境裁判所、蔷薇学会等轮回者组织的详细条目（含讲述者专属深层设定）；</li>
+        <li><strong>角色创建指南</strong>：互动式引导，填写信息后可直接<strong>导出符合模板格式的角色卡</strong>（.txt）；</li>
+        <li><strong>战斗规则</strong>：第三章内容的完整录入（含可切换的流程图与相生相克示意图）；</li>
+        <li><strong>探索与成长</strong>：第四章内容的完整录入——专精技能详解与提升、脱战恢复、愿力提升、任务之间的空闲时间与成长进度记录表；</li>
+        <li><strong>符文库</strong>：八个系谱的索引表 + 每个符文的独立条目（以超链接索引）。</li>
+      </ul>
+
+      <h2>版权声明</h2>
+      <p>《远梦之光》的全部规则内容（文本、数值、表格）由<strong>原作者「风擎天下」</strong>创作，版权归其所有。本站仅用于个人/跑团使用与规则查阅，不进行任何商业用途。如需转载或修改规则内容，请联系原作者获取授权。</p>
+
+      <h2>开源与模板声明</h2>
+      <p>本站的页面布局（左侧导航 + 右侧正文的 Wiki 排版）为<strong>原创实现</strong>，未直接复制任何站点的代码，但在设计上参考了以下常见 Wiki 站点的排版习惯与开源项目：</p>
+      <ul>
+        <li><a href="https://www.mediawiki.org/" target="_blank" rel="noopener">MediaWiki</a> —— 经典 Wiki 侧栏导航与条目排版惯例；</li>
+        <li><a href="https://vitepress.dev/" target="_blank" rel="noopener">VitePress</a> —— 侧栏分组（可折叠子菜单）与内容区的排版思路；</li>
+        <li><a href="https://docusaurus.io/" target="_blank" rel="noopener">Docusaurus</a> —— 文档站点侧栏与面包屑导航的组织方式。</li>
+      </ul>
+      <p>技术实现说明：本站为<strong>纯静态站点</strong>（HTML + CSS + 原生 JavaScript），无任何外部 CDN 依赖，字体使用系统默认字体；符文库相关页面由 <code>tools/generate-rune-pages.js</code>（Node.js 脚本）依据 <code>js/rune-data.js</code> 数据自动生成，便于后续随规则文档更新重新生成。</p>
+      <p>战斗规则页的<strong>战斗轮流程图</strong>与<strong>八系谱相生相克示意图</strong>为本站<strong>自绘的原生 SVG 图形</strong>（流程图形状遵循通用标准：圆角矩形＝开始/结束、矩形＝处理、菱形＝判断；示意图采用八角放射布局、以带箭头线段表示相生相克关系），由 <code>js/combat.js</code> 动态绘制，<strong>未引用任何第三方图表库</strong>，可在表格与图形两种形式之间切换。</p>
+
+      <h2>使用说明</h2>
+      <ul>
+        <li>直接双击 <code>index.html</code> 即可在浏览器中打开本站，无需服务器；</li>
+        <li>侧边栏「<strong>符文库</strong>」点击文字进入全量总览，点击右侧箭头展开八个系谱子菜单；</li>
+        <li>侧边栏标题下方为「<strong>讲述者模式</strong>」开关：供 KP（游戏主持人）开启，开启后显示并开放搜索仅限讲述者可见的内容；</li>
+        <li>页面右上角为<strong>站内搜索</strong>框，可搜索全部条目；每个页面右侧提供<strong>页内目录</strong>；</li>
+        <li class="gm-only">「<strong>解锁</strong>」入口位于<strong>主页底部</strong>：输入讲述者在剧情中发放的解锁码，可解锁隐藏条目（已验证的解锁码保存在本地）；</li>
+        <li>侧边栏底部的<strong>太阳/月亮按钮</strong>可快速切换浅色/深色主题，<strong>齿轮按钮</strong>打开设置（夜间模式、不再弹出讲述者警告、清空进度）；</li>
+        <li>「<strong>角色创建指南</strong>」页右侧为角色卡实时预览，可一键导出或复制；</li>
+        <li>更新记录见 <a href="changelog.txt" target="_blank">changelog.txt</a>。</li>
+      </ul>
+
+      <h2>免责声明</h2>
+      <p>本站由规则文档自动/人工整理生成，若与原始文档存在出入，以原始文档为准。规则中的数值与判定标准请以 讲述者 裁定为准。</p>
+    </article>
+    <footer class="page-footer">
+      <a href="index.html">远梦之光 · 规则 Wiki</a> · 内容基于《远梦之光》规则文档 v0.1 整理 · <a href="about.html">关于</a>
+    </footer>
+  </main>
+</div>
+<script>window.NAV = { base: "", page: "about", sub: "" };</script>
+<script src="js/rune-data.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/narrator.js"></script>
+<script src="js/unlock.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/search.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>

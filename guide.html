@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>角色创建指南 - 远梦之光 · 规则 Wiki</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/night.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar"></aside>
+  <main class="content">
+    <article class="page">
+      <h1>角色创建指南</h1>
+      <p class="subtitle">《第一章：角色创建指南》（v0.1）· 互动式引导：填写右侧表单，角色卡会实时生成，最后可直接导出。</p>
+
+      <div class="guide-layout">
+        <!-- ================= 表单区 ================= -->
+        <div id="guide-form">
+          <!-- 第一步 -->
+          <h2>第一步：确定识质与源动力</h2>
+          <p>这是角色的<strong>情感内核</strong>。识质不提供数值加成，但它决定扮演基调，以及学习某些符文时的倾向（例如冷色系识质更容易掌握意识系符文）。</p>
+
+          <div class="field">
+            <label>识质（修饰词 + 主色调）</label>
+            <div class="select-row">
+              <select id="g-modifier"></select>
+              <select id="g-hue"></select>
+            </div>
+            <div class="hint" id="g-识质-preview"></div>
+          </div>
+
+          <details>
+            <summary>参考：12 种主色调</summary>
+            <table class="wiki-table" id="hue-table"></table>
+          </details>
+          <details>
+            <summary>参考：12 种修饰词</summary>
+            <table class="wiki-table" id="modifier-table"></table>
+          </details>
+
+          <div class="field">
+            <label for="g-drive">源动力</label>
+            <textarea id="g-drive" placeholder="用一句话写下角色行动的根本动机。例如：“我要阻止那些本不该发生的悲剧重演。”"></textarea>
+          </div>
+
+          <!-- 基因系统（可选） -->
+          <h2>基因系统（可选）</h2>
+          <div class="field">
+            <label><input type="checkbox" id="g-gene-enable" style="accent-color:var(--accent)"> 启用基因系统（可选规则，使用前请征询所有参与者意见）</label>
+          </div>
+          <div id="g-gene-panel" style="display:none">
+            <div class="gene-section-box">
+              <p style="margin-top:0">基因可为角色带来增益或负担。非负面基因有稀有度（普通/罕见/稀有，效果越强稀有度越高），负面基因不计品质。详细信息见<a href="genes.html">基因</a>分页。</p>
+              <div class="gene-counts">
+                <label>非负面基因数量（至多2个）：
+                  <select id="g-gene-pcount">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                  </select>
+                </label>
+                <label>负面基因数量（至多2个）：
+                  <select id="g-gene-ncount">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                  </select>
+                </label>
+              </div>
+              <div class="gene-mode">
+                <label><input type="radio" name="g-genemode" value="pick" checked> 指定基因</label>
+                <label><input type="radio" name="g-genemode" value="random"> 随机选择</label>
+              </div>
+              <div id="g-gene-pick">
+                <p style="margin:6px 0 4px"><strong>非负面基因</strong>（选择 <span id="g-gene-pneed">2</span> 个）：</p>
+                <div id="g-gene-pool-p"></div>
+                <p style="margin:14px 0 4px"><strong>负面基因</strong>（选择 <span id="g-gene-nneed">2</span> 个）：</p>
+                <div id="g-gene-pool-n"></div>
+              </div>
+              <div id="g-gene-random" style="display:none">
+                <p style="margin:6px 0 4px">点击按钮按概率随机抽取：非负面基因按 <strong>普通 50% / 罕见 35% / 稀有 15%</strong> 抽选，负面基因等概率抽取。</p>
+                <button type="button" class="btn primary" id="g-gene-roll">🎲 随机选择</button>
+              </div>
+              <div id="g-gene-result"></div>
+            </div>
+          </div>
+
+          <!-- 第二步 -->
+          <h2>第二步：分配基础属性</h2>
+          <p>角色由三项基础属性定义。你有 <strong id="g-attr-total">40 点</strong> 自由分配，每项最低 <strong>2 点</strong>，最高 <strong>20 点</strong>。</p>
+          <p>剩余可分配点数：<span class="points-left ok" id="g-points-left">40</span></p>
+          <div class="attr-grid">
+            <div class="attr-box">
+              <div class="attr-name">算力（ACU）</div>
+              <div class="attr-sub">先天数值，决定符文的质量与数量</div>
+              <input type="number" id="g-acu" min="2" max="20" value="10">
+              <input type="range" id="g-acu-r" min="2" max="20" value="10">
+              <div class="hint">调整值：<span id="g-acu-mod">0</span><span class="attr-gene" id="g-acu-gene"></span></div>
+            </div>
+            <div class="attr-box">
+              <div class="attr-name">愿力（WIL）</div>
+              <div class="attr-sub">扭曲现实的力量储量，随经历成长</div>
+              <input type="number" id="g-wil" min="2" max="20" value="10">
+              <input type="range" id="g-wil-r" min="2" max="20" value="10">
+              <div class="hint">调整值：<span id="g-wil-mod">0</span><span class="attr-gene" id="g-wil-gene"></span></div>
+            </div>
+            <div class="attr-box">
+              <div class="attr-name">体魄（PHY）</div>
+              <div class="attr-sub">身体强度、耐力与反应速度</div>
+              <input type="number" id="g-phy" min="2" max="20" value="10">
+              <input type="range" id="g-phy-r" min="2" max="20" value="10">
+              <div class="hint">调整值：<span id="g-phy-mod">0</span><span class="attr-gene" id="g-phy-gene"></span></div>
+            </div>
+          </div>
+          <details>
+            <summary>参考：属性调整值表</summary>
+            <table class="wiki-table">
+              <thead><tr><th>属性值</th><th>调整值</th><th>属性值</th><th>调整值</th></tr></thead>
+              <tbody>
+                <tr><td>2~3</td><td>-3</td><td>12-14</td><td>+1</td></tr>
+                <tr><td>4-5</td><td>-2</td><td>15-17</td><td>+2</td></tr>
+                <tr><td>6-8</td><td>-1</td><td>18（最高20）</td><td>+3</td></tr>
+                <tr><td>9-11</td><td>0</td><td>—</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </details>
+
+          <!-- 第三步 -->
+          <h2>第三步：计算衍生属性</h2>
+          <p>根据基础属性自动计算：</p>
+          <div class="derived-grid" id="g-derived"></div>
+          <div class="callout info" style="margin-top:10px">特别的，解构师的符文槽位固定为 1，且解构时不能构造其它符文。</div>
+
+          <!-- 第四步 -->
+          <h2>第四步：掌握初始符文</h2>
+          <p>创建角色时，从符文库中选择至多 <strong id="g-rune-limit-label">2 个符文</strong>，其平均算力消耗总和（扣除灵魂记忆抵扣后）不能超过你的算力上限。符文按系谱<strong>折叠</strong>展示，可用上方快捷索引快速展开对应系谱；点击符文名可查看其详细条目。</p>
+          <div class="field">
+            <label><input type="checkbox" id="g-deconstructor" style="accent-color:var(--accent)"> 我是解构师（符文槽位固定为 1，只能选择 1 个符文）</label>
+          </div>
+          <div class="field">
+            <label class="soul-row">
+              <input type="checkbox" id="g-soul" style="accent-color:var(--accent)">
+              <span>我的人物有灵魂记忆（可额外选择 1 个初始符文）</span><br>
+              <input type="number" id="g-soul-value" min="0" step="1" value="0" placeholder="抵扣算力" disabled>
+              <span class="hint" style="display:inline">抵扣算力数值</span>
+            </label>
+            <div class="hint" id="g-soul-hint">勾选后可在上方输入一个数值，用于抵扣所选符文的平均算力消耗总和（有效消耗 = 符文总消耗 − 抵扣值，最低为 0）。</div>
+          </div>
+          <div id="g-rune-msg" class="callout warn" style="display:none"></div>
+          <div id="g-rune-list"></div>
+
+          <!-- 第五步 -->
+          <h2>第五步：分配专精点数</h2>
+          <p>你有 <strong id="g-spec-total">10 点</strong> 专精点数（1 点 = 1 级，每项 0~5 级）。剩余：<span class="points-left ok" id="g-spec-left">10</span>　<em class="hint"><br>专精在冒险中的成长方式见 <a href="explore.html">探索与成长</a>。</em></p>
+          <div id="g-spec-list"></div>
+          <details>
+            <summary>参考：专精检定公式与难度等级</summary>
+            <blockquote><strong>D20 + 对应属性调整值 + 专精等级</strong> ≥ 难度等级（DC）</blockquote>
+            <table class="wiki-table">
+              <thead><tr><th>难度</th><th>DC</th><th>示例</th></tr></thead>
+              <tbody>
+                <tr><td>极简单</td><td>5</td><td>在平静湖面找一条船</td></tr>
+                <tr><td>简单</td><td>10</td><td>撬开一把普通锁</td></tr>
+                <tr><td>中等</td><td>15</td><td>从昏迷者口中获得有效信息</td></tr>
+                <tr><td>困难</td><td>20</td><td>在暴雨中追踪躲进山洞的嫌疑人</td></tr>
+                <tr><td>极困难</td><td>25</td><td>破解古代符文阵法的结构</td></tr>
+                <tr><td>近乎不可能</td><td>30</td><td>在无线索情况下找到隐藏的混沌基点</td></tr>
+              </tbody>
+            </table>
+          </details>
+
+          <!-- 第六步 -->
+          <h2>第六步：填写背景信息</h2>
+          <div class="field">
+            <label for="g-name">角色名</label>
+            <input type="text" id="g-name" placeholder="你的名字">
+          </div>
+          <div class="field">
+            <label for="g-org">所属组织</label>
+            <input type="text" id="g-org" placeholder="梦境裁判所（科室）、独立轮回者、蔷薇学会会员等">
+          </div>
+          <div class="field">
+            <label for="g-background">背景简述</label>
+            <textarea id="g-background" placeholder="简要描述角色的出身与经历"></textarea>
+          </div>
+          <div class="field">
+            <label for="g-memory">关键记忆</label>
+            <textarea id="g-memory" placeholder="一段塑造了角色的往事（与源动力呼应）"></textarea>
+          </div>
+          <div class="field">
+            <label for="g-goal">个人目标</label>
+            <textarea id="g-goal" placeholder="角色最想达成的一件事"></textarea>
+          </div>
+        </div>
+
+        <!-- ================= 预览区 ================= -->
+        <div>
+          <div class="btn-row">
+            <button type="button" class="btn primary" id="g-export">导出角色卡（.txt）</button>
+            <button type="button" class="btn" id="g-copy">复制角色卡</button>
+            <button type="button" class="btn" id="g-example">载入示例</button>
+            <button type="button" class="btn" id="g-reset">重置</button>
+          </div>
+          <div class="card-preview">
+            <div class="cp-head">角色卡实时预览</div>
+            <pre id="g-card"></pre>
+          </div>
+        </div>
+      </div>
+    </article>
+    <footer class="page-footer">
+      <a href="index.html">远梦之光 · 规则 Wiki</a> · 内容基于《远梦之光》规则文档 v0.1 整理 · <a href="about.html">关于</a>
+    </footer>
+  </main>
+</div>
+<script>window.NAV = { base: "", page: "guide", sub: "" };</script>
+<script src="js/gene-data.js"></script>
+<script src="js/rune-data.js"></script>
+<script src="js/guide.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/narrator.js"></script>
+<script src="js/unlock.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/search.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>
