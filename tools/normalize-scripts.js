@@ -6,8 +6,8 @@ const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const ORDER = [
   "gene-data.js", "rune-data.js", "guide.js", "genes.js", "nav.js", "narrator.js",
-  "unlock.js", "toc.js", "search.js", "settings.js",
-  "hydris-data.js", "hydris.js"
+  "unlock.js", "combat.js", "toc.js", "search.js", "settings.js",
+  "hydris-data.js", "hydris.js", "mobile.js"
 ];
 
 function walk(dir, out) {

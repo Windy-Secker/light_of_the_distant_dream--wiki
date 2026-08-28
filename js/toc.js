@@ -70,10 +70,14 @@
     });
 
     if (heads.length < 2) {
-      panel.style.display = "none";
+      // 标题不足时不渲染目录项，但保留目录列的占位（不可见）：
+      // 使所有页面的正文列宽度一致，避免符文子页/符文页相对其它页面右移。
+      panel.style.display = "";
+      panel.style.visibility = "hidden";
       return;
     }
     panel.style.display = "";
+    panel.style.visibility = "";
 
     var title = document.createElement("div");
     title.className = "toc-title";

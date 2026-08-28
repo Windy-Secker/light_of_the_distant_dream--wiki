@@ -68,7 +68,15 @@ a:hover { text-decoration: underline; }
   top: 0;
   height: 100vh;
   overflow-y: auto;
+  /* 始终为滚动条预留槽位：滚动条出现/消失时，侧边栏文字与标题宽度保持不变 */
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, .22) transparent;
 }
+.sidebar::-webkit-scrollbar { width: 8px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, .22); border-radius: 4px; }
+.sidebar::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, .35); }
 
 .sidebar-brand {
   padding: 20px 18px 14px;
@@ -186,6 +194,8 @@ li.open > .nav-children { max-height: 420px; }
   box-shadow: var(--shadow);
   padding: 34px 44px 40px;
   max-width: 920px;
+  /* 所有页面（含标题不足的符文子页）都保留目录列占位，正文列宽度一致，
+     因此可以安全地居中：宽屏下内容在“除侧边栏和目录外的空间”内居中 */
   margin: 0 auto;
 }
 
@@ -657,10 +667,16 @@ table.wiki-table td .rune-link { font-weight: 600; }
   align-self: flex-start;
   max-height: calc(100vh - 80px);
   overflow-y: auto;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(60, 75, 110, .3) transparent;
   border-left: 1px solid var(--border);
   padding: 4px 0 10px 14px;
   margin-top: 44px;
 }
+.toc-panel::-webkit-scrollbar { width: 6px; }
+.toc-panel::-webkit-scrollbar-track { background: transparent; }
+.toc-panel::-webkit-scrollbar-thumb { background: rgba(60, 75, 110, .3); border-radius: 3px; }
 
 .toc-panel .toc-title {
   font-size: 12px;
@@ -1236,3 +1252,44 @@ details > *:last-child { margin-bottom: 14px; }
 .xy-line-sheng { stroke: #43a047; stroke-width: 1.8; fill: none; stroke-dasharray: 7 4; }
 .xy-line-ke { stroke: #e05d5d; stroke-width: 1.6; fill: none; }
 .xy-dim { opacity: .12; }
+
+/* ==========================================================================
+   十一、移动端适配增强
+   ========================================================================== */
+
+/* wiki 表格横向滚动容器（由 js/mobile.js 生成）；
+   桌面端无溢出时不出现滚动条，无副作用 */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 10px 0;
+}
+
+/* 窄屏：大表格保持内容宽度（横向滚动），小表格仍撑满容器 */
+@media (max-width: 720px) {
+  .table-scroll table.wiki-table { width: max-content; min-width: 100%; }
+}
+
+/* 极窄屏（手机竖屏）排版收紧 */
+@media (max-width: 480px) {
+  .page h1 { font-size: 23px; }
+  .page h2 { font-size: 19px; margin: 26px 0 10px; }
+  .page h3 { font-size: 16px; }
+  .page { padding: 16px 14px 24px; }
+  .content { padding: 16px 10px 36px; }
+
+  /* 右上角搜索框与左上角菜单按钮避免重叠 */
+  .search-toolbar { right: 10px; }
+  .search-box { width: 200px; }
+
+  /* 属性分配框在极窄屏改为单列 */
+  .attr-grid { grid-template-columns: 1fr; }
+
+  /* 示意图外框收紧 */
+  .diagram-frame { padding: 6px; }
+}
+
+/* 侧边栏抽屉打开时锁定背景滚动 */
+@media (max-width: 860px) {
+  body.sidebar-open { overflow: hidden; }
+}

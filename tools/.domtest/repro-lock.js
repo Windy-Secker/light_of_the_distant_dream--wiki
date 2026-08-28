@@ -52,10 +52,11 @@ console.log("== 锁定提示中的解锁码 ==");
   const notice = dom.window.document.querySelector(".hyd-locked");
   log(rel + "：解锁码位于 hyd-locked 提示内（仅讲述者可见）", !!notice && /解锁码：/.test(notice.textContent));
 });
-// 轮回页：无 hyd-locked 提示（玩家/讲述者均无“此处有锁定内容”的提示，锁定内容内部自带讲述者警告）
+// 轮回页：hyd-locked 提示存在且含解锁码，但该提示在 CSS 中默认隐藏（仅讲述者模式显示）
 const lunDom = new JSDOM(fs.readFileSync(path.join(ROOT, "worldview", "轮回.html"), "utf8"), { url: "http://x/", runScripts: "outside-only" });
 const lunDoc = lunDom.window.document;
-log("轮回页无 hyd-locked 提示（不泄露锁定信息）", !lunDoc.querySelector(".hyd-locked"));
+const lunNotice = lunDoc.querySelector(".hyd-locked");
+log("轮回页 hyd-locked 提示存在且含解锁码（仅讲述者可见）", !!lunNotice && /解锁码：kijexawe/.test(lunNotice.textContent));
 log("轮回页锁定内容内有讲述者警告", /讲述者专属信息/.test(lunDoc.querySelector(".hyd-content").textContent));
 
 console.log(fail === 0 ? "\n全部通过 (" + pass + ")" : "\n存在失败 (" + fail + ")");

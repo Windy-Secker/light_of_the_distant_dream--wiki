@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "jsdom": "^30.0.1"
+    "jsdom": "^30.0.1",
+    "puppeteer-core": "^25.9.0"
   }
 }
