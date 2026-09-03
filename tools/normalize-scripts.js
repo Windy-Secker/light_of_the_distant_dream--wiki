@@ -7,7 +7,7 @@ const ROOT = path.join(__dirname, "..");
 const ORDER = [
   "gene-data.js", "rune-data.js", "guide.js", "genes.js", "nav.js", "narrator.js",
   "unlock.js", "combat.js", "toc.js", "search.js", "settings.js",
-  "hydris-data.js", "hydris.js", "mobile.js"
+  "hydris-data.js", "hydris.js", "mobile.js", "kwfilter.js"
 ];
 
 function walk(dir, out) {

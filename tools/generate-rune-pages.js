@@ -73,6 +73,8 @@ ${content}
 <script src="${base}js/toc.js"></script>
 <script src="${base}js/search.js"></script>
 <script src="${base}js/settings.js"></script>
+<script src="${base}js/mobile.js"></script>
+<script src="${base}js/kwfilter.js"></script>
 </body>
 </html>
 `;
@@ -145,11 +147,20 @@ ${FIELD_TABLE}
 </li>
 </ul>
 <div class="callout warn gm-only">⚠ 有关「奇迹」的更深层设定、具体资料与名称，仅<strong>讲述者模式</strong>可见。请在侧边栏开启「讲述者模式」查看。</div>
+
+<div class="kw-bar">
+<input type="search" class="kw-filter" placeholder="检索符文：名称 / 算力消耗 / 效果关键词…" autocomplete="off"
+  data-scope="#rune-library" data-items="tbody tr" data-hide-empty=".table-scroll" data-empty="#rune-kw-empty">
+</div>
+<div class="kw-empty" id="rune-kw-empty">未找到匹配的符文</div>
+<div id="rune-library">
 `;
 
 RUNE_LIBRARY.forEach((family) => {
   runesIndexContent += familySection(family, "");
 });
+
+runesIndexContent += "\n</div>\n";
 
 fs.writeFileSync(
   path.join(OUT_DIR, "..", "runes.html"),

@@ -299,11 +299,15 @@
     return "环境/状态类";
   }
 
-  function negCat(name) {
-    if (["脆弱", "呆滞", "麻木", "四体不勤", "输在起跑线"].indexOf(name) !== -1) return "属性削弱类";
-    if (["贫血", "夜盲", "惧火", "玻璃心", "怯场", "笨手笨脚"].indexOf(name) !== -1) return "战斗限制类";
-    if (["结巴", "脸盲", "疑心", "迷信", "恐高", "幽闭", "自闭", "刻板", "易垮", "悲观", "单科生"].indexOf(name) !== -1) return "社交/认知限制类";
-    if (["灾星", "回声", "罪孽"].indexOf(name) !== -1) return "特殊诅咒类";
+  // 注意：renderGenePools 的 build() 以“基因对象”调用分类函数（与 nonNegCat 一致）
+  function negCat(g) {
+    var name = (g && g.name) || "";
+    // 先去掉 Lv.x 后缀（如「单科生 Lv.1」→「单科生」），按基础名称归类
+    var base = name.replace(/ Lv\.\d+$/, "");
+    if (["脆弱", "呆滞", "麻木", "四体不勤", "输在起跑线"].indexOf(base) !== -1) return "属性削弱类";
+    if (["贫血", "夜盲", "惧火", "玻璃心", "怯场", "笨手笨脚"].indexOf(base) !== -1) return "战斗限制类";
+    if (["结巴", "脸盲", "疑心", "迷信", "恐高", "幽闭", "自闭", "刻板", "易垮", "悲观", "单科生"].indexOf(base) !== -1) return "社交/认知限制类";
+    if (["灾星", "回声", "罪孽"].indexOf(base) !== -1) return "特殊诅咒类";
     return "其他";
   }
 
@@ -369,6 +373,7 @@
 
     build(poolP, GENE.nonNegative, "p", nonNegCat);
     build(poolN, GENE.negative, "n", negCat);
+    if (window.KWFilter) window.KWFilter.refresh();
   }
 
   // 已选基因详细展示（与列表一致的详情：名称/稀有度/效果/扮演提示/备注）
@@ -614,6 +619,7 @@
       });
       box.appendChild(det);
     });
+    if (window.KWFilter) window.KWFilter.refresh();
   }
 
   function renderSpecList() {

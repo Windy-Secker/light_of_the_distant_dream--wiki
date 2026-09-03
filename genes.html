@@ -43,6 +43,11 @@
 
       <h2>三、正面基因</h2>
       <p>非负面基因按效果分为四类，稀有度越高效果越强。表格中的<strong>扮演提示</strong>用于辅助角色扮演。</p>
+      <div class="kw-bar">
+        <input type="search" class="kw-filter" placeholder="检索全部基因：名称 / 效果 / 扮演提示 / 备注…" autocomplete="off"
+               data-scope="#g-nonneg,#g-neg" data-items="tbody tr" data-hide-empty=".table-scroll" data-empty="#gene-kw-empty">
+      </div>
+      <div class="kw-empty" id="gene-kw-empty">未找到匹配的基因</div>
       <div id="g-nonneg"></div>
 
       <h2>四、负面基因</h2>
@@ -67,5 +72,6 @@
 <script src="js/search.js"></script>
 <script src="js/settings.js"></script>
 <script src="js/mobile.js"></script>
+<script src="js/kwfilter.js"></script>
 </body>
 </html>

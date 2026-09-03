@@ -74,6 +74,10 @@
                 <label><input type="radio" name="g-genemode" value="random"> 随机选择</label>
               </div>
               <div id="g-gene-pick">
+                <div class="kw-bar">
+                  <input type="search" class="kw-filter" placeholder="检索基因：名称 / 效果 / 扮演提示 / 备注…" autocomplete="off"
+                         data-scope="#g-gene-pick" data-items=".gene-pick" data-hide-empty="details.gene-family">
+                </div>
                 <p style="margin:6px 0 4px"><strong>非负面基因</strong>（选择 <span id="g-gene-pneed">2</span> 个）：</p>
                 <div id="g-gene-pool-p"></div>
                 <p style="margin:14px 0 4px"><strong>负面基因</strong>（选择 <span id="g-gene-nneed">2</span> 个）：</p>
@@ -149,6 +153,10 @@
             <div class="hint" id="g-soul-hint">勾选后可在上方输入一个数值，用于抵扣所选符文的平均算力消耗总和（有效消耗 = 符文总消耗 − 抵扣值，最低为 0）。</div>
           </div>
           <div id="g-rune-msg" class="callout warn" style="display:none"></div>
+          <div class="kw-bar">
+            <input type="search" class="kw-filter" placeholder="检索符文：名称 / 系谱 / 效果关键词…" autocomplete="off"
+                   data-scope="#g-rune-list" data-items=".rune-pick" data-hide-empty="details.rune-family">
+          </div>
           <div id="g-rune-list"></div>
 
           <!-- 第五步 -->
@@ -226,5 +234,6 @@
 <script src="js/search.js"></script>
 <script src="js/settings.js"></script>
 <script src="js/mobile.js"></script>
+<script src="js/kwfilter.js"></script>
 </body>
 </html>

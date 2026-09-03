@@ -194,3 +194,12 @@ body.theme-dark .flow-dec { fill: #2c2618; stroke: #fb8c00; }
 body.theme-dark .flow-line { stroke: #7a8496; }
 
 body.theme-dark .xy-node circle { fill: #1c222c; }
+
+/* ---------- 关键字检索框（夜间适配） ---------- */
+
+body.theme-dark .kw-filter {
+  background-color: #141922;
+  border-color: var(--border);
+  color: var(--text);
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238d97ab' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M21 21l-4.3-4.3'/%3E%3C/svg%3E");
+}
