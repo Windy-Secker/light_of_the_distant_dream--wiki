@@ -1337,3 +1337,69 @@ details > *:last-child { margin-bottom: 14px; }
   color: var(--text-dim);
   padding: 8px 2px;
 }
+
+/* ==========================================================================
+   十三、移动端顶栏（菜单 + 搜索，≤860px）
+   菜单按钮与搜索框合并进一条固定顶栏，网页主体从顶栏下方开始，
+   不再出现悬浮控件压住正文/侧边栏文本的情况。
+   ========================================================================== */
+
+.topbar { display: none; }
+
+@media (max-width: 860px) {
+  .topbar {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    padding: 0 8px;
+    background: var(--content-bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 1px 6px rgba(20, 30, 50, .1);
+    z-index: 95;
+  }
+
+  /* 顶栏内的菜单按钮：取消原先的 fixed 悬浮样式 */
+  .topbar .menu-toggle {
+    position: static;
+    flex: 0 0 auto;
+    background: transparent;
+    color: var(--text);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 15px;
+  }
+  .topbar .menu-toggle:active { background: var(--accent-soft); }
+
+  /* 顶栏内的搜索框：取消 fixed，靠右 */
+  .topbar .search-toolbar {
+    position: static;
+    margin-left: auto;
+    min-width: 0;
+    z-index: auto;
+  }
+  .topbar .search-box {
+    width: min(250px, calc(100vw - 150px));
+    box-shadow: none;
+  }
+  .topbar .search-box input { font-size: 13.5px; padding: 6px 10px 6px 30px; }
+  .topbar .search-results { top: calc(100% + 6px); right: 0; max-height: 55vh; }
+
+  /* 网页主体与侧边栏抽屉从顶栏下方开始 */
+  .layout { padding-top: 56px; }
+  .sidebar { top: 56px; height: calc(100vh - 56px); }
+  body.sidebar-open .sidebar-scrim { top: 56px; }
+
+  /* 顶栏已占据顶部空间，内容区不再需要额外顶部留白 */
+  .content { padding-top: 14px; }
+}
+
+@media (max-width: 480px) {
+  .topbar .search-box { width: calc(100vw - 130px); }
+  .topbar .menu-toggle { font-size: 14px; padding: 8px 8px; }
+}
